@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Sprite Animations/surge.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Resources/Scripts/input.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 35.6819, 1.60599 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 3 )
+SPEED = 500
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( -1560.63, -1023.42 )
+anchor_mode = 0
+current = true
+zoom = Vector2( 4, 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+pause_mode = 1
+position = Vector2( 503.132, 295.504 )
+scale = Vector2( 0.605253, 0.588442 )
+frames = ExtResource( 2 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 563.922, 403.222 )
+scale = Vector2( 3.84675, -15.7307 )
+shape = SubResource( 1 )
